@@ -10,7 +10,7 @@ Group:      Development/Perl
 Summary:    Gtk2::TreeView renderer for Data::TreeDumper
 Url:        http://search.cpan.org/dist/%{module}
 Source:     http://www.cpan.org/modules/by-module/Data/%{module}-%{version}.tar.gz
-BuildRequires: perl-devel
+BuildRequires: perl(Data::TreeDumper)
 BuildArch: noarch
 BuildRoot:  %{_tmppath}/%{name}-%{version}
 
