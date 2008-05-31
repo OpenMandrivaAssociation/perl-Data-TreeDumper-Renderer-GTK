@@ -1,6 +1,8 @@
 %define module   Data-TreeDumper-Renderer-GTK
 %define version    0.01
-%define release    %mkrel 1
+%define release    %mkrel 2
+
+%define _requires_exceptions perl(Gtk2::TreeView)
 
 Name:       perl-%{module}
 Version:    %{version}
@@ -14,6 +16,7 @@ BuildRequires: perl(Data::TreeDumper)
 BuildRequires: perl(Term::Size)
 BuildRequires: perl(Gtk2)
 BuildRequires: x11-server-xvfb
+Requires: perl(Term::Size)
 BuildArch: noarch
 BuildRoot:  %{_tmppath}/%{name}-%{version}
 
