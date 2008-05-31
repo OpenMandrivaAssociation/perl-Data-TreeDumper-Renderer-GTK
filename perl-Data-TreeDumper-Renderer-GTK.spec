@@ -13,6 +13,7 @@ Source:     http://www.cpan.org/modules/by-module/Data/%{module}-%{version}.tar.
 BuildRequires: perl(Data::TreeDumper)
 BuildRequires: perl(Term::Size)
 BuildRequires: perl(Gtk2)
+BuildRequires: x11-server-xvfb
 BuildArch: noarch
 BuildRoot:  %{_tmppath}/%{name}-%{version}
 
@@ -33,7 +34,7 @@ choose to expand or collapse all items.
 %make
 
 %check
-make test
+xvfb-run make test
 
 %install
 rm -rf %{buildroot}
