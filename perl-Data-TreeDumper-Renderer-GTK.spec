@@ -12,6 +12,7 @@ Url:        http://search.cpan.org/dist/%{module}
 Source:     http://www.cpan.org/modules/by-module/Data/%{module}-%{version}.tar.gz
 BuildRequires: perl(Data::TreeDumper)
 BuildRequires: perl(Term::Size)
+BuildRequires: perl(Gtk2)
 BuildArch: noarch
 BuildRoot:  %{_tmppath}/%{name}-%{version}
 
