@@ -1,6 +1,6 @@
 %define module   Data-TreeDumper-Renderer-GTK
-%define version    0.01
-%define release    %mkrel 3
+%define version    0.02
+%define release    %mkrel 1
 
 %define _requires_exceptions perl(Gtk2::TreeView)
 
