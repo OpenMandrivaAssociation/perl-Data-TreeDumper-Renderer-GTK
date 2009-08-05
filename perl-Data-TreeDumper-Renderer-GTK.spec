@@ -1,24 +1,25 @@
-%define module   Data-TreeDumper-Renderer-GTK
-%define version    0.02
-%define release    %mkrel 1
+%define upstream_name    Data-TreeDumper-Renderer-GTK
+%define upstream_version 0.02
 
 %define _requires_exceptions perl(Gtk2::TreeView)
 
-Name:       perl-%{module}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
-Group:      Development/Perl
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:    Gtk2::TreeView renderer for Data::TreeDumper
-Url:        http://search.cpan.org/dist/%{module}
-Source:     http://www.cpan.org/modules/by-module/Data/%{module}-%{version}.tar.gz
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Data/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl(Data::TreeDumper)
 BuildRequires: perl(Term::Size)
 BuildRequires: perl(Gtk2)
 BuildRequires: x11-server-xvfb
 Requires: perl(Term::Size)
 BuildArch: noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 GTK-perl renderer for *Data::TreeDumper*. 
@@ -30,7 +31,7 @@ anywhere in the view brings up a context menu, from which the user can
 choose to expand or collapse all items.
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -52,4 +53,3 @@ rm -rf %{buildroot}
 %{_mandir}/man3/*
 %perl_vendorlib/Data
 %perl_vendorlib/auto/Data
-
