@@ -9,7 +9,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	4
 
 Summary:	Gtk2::TreeView renderer for Data::TreeDumper
 License:	GPL+ or Artistic
